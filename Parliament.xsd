@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema 	attributeFormDefault="unqualified" 
+			elementFormDefault="qualified" 
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns="http://www.parlamento.pt"
+			targetNamespace="http://www.parlamento.pt">
+
+	<xs:element name="parliament" type="parliamentType"/>
+
+	<xs:complexType name="politicianType">
+		<xs:simpleContent>
+			<xs:extension base="politicianName">
+				<xs:attribute name="code" type="xs:integer" use="required"/>
+				<xs:attribute name="party" type="xs:string"/>
+				<xs:attribute name="age" type="xs:positiveInteger"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:simpleType name="politicianName">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(([\p{Lu}][\p{L}]*)( [\p{Lu}][\p{L}]*)+)"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="speechType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="order" type="xs:positiveInteger"/>
+				<xs:attribute name="politician" type="xs:integer"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="sessionType">
+		<xs:sequence>
+			<xs:element name="speech" type="speechType" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="date" type="xs:date" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="parliament-interventionsType">
+		<xs:sequence>
+			<xs:element name="session" type="sessionType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="politiciansType">
+		<xs:sequence>
+			<xs:element name="politician" type="politicianType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="parliamentType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="parliament-interventions" type="parliament-interventionsType"/>
+				<xs:element name="politicians" type="politiciansType" />
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+
+
+</xs:schema>
