@@ -19,12 +19,12 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:template match="//politicians">
 		<table>
 			<tr>
-				<td>code</td>
-				<td>party</td>
-				<td>age</td>
-				<td>name</td>
-				<td>nParlInterv</td>
-				<td>nSessions</td>
+				<td>Code</td>
+				<td>Party</td>
+				<td>Age</td>
+				<td>Name</td>
+				<td>Number of Interventions</td>
+				<td>Number of Sessions</td>
 			</tr>
 			<xsl:apply-templates />
 		</table>
@@ -35,7 +35,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 		<xsl:param name="party" select="./@party" />
 		<xsl:param name="age" select="./@age" />
 		<xsl:param name="name" select="./text()" />
-		<xsl:param name="nParlInterv" select="count(//parliament-interventions[./session/speech/@politician = $code])" />
+		<xsl:param name="nParlInterv" select="count(//parliament-interventions[./session/speech[@politician = $code]])" />
 		<xsl:param name="nSessions" select="count(//session[./speech/@politician = $code])" />
 		<tr>
 			<td><xsl:value-of select="$code" /></td>
