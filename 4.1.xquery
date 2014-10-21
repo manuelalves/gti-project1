@@ -1,8 +1,10 @@
-let $doc := doc("file:///C:\Users\Ricardo Leitão\Documents\gti-project1\parliament-data.xml")
+declare namespace p = "http://www.parlamento.pt";
+
+let $doc := doc("file:///afs/ist.utl.pt/users/3/2/ist169632/gti-project1/parliament-data.xml")
 
 let $rep := (
-for $speech in $doc//speech
-let $code := $doc//politician[text() = "José Seguro"]/@code
+for $speech in $doc//p:speech
+let $code := $doc//p:politician[text() = "JosÃ© Seguro"]/@code
 let $replies := $speech[@politician = $code]/following-sibling::*[1][attribute::politician and @politician != $code]
 order by $replies/@politician
 return $replies)
@@ -16,6 +18,6 @@ return if (count($count) > 2)
 	else ())
 
 for $code in $codes
-let $politician := $doc//politician[@code = $code]
+let $politician := $doc//p:politician[@code = $code]
 return <politician party="{$politician/@party}">{$politician/text()}</politician>
 
