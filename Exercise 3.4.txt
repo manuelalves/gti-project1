@@ -1,0 +1,4 @@
+declare default element namespace "http://www.parlamento.pt";
+doc("file:///Users/manuelalves/Documents/GitHub/gti-project1/parliament-data-small.xml")
+
+/round(/avg(//politician[@code=//session[@date="2014-03-01"]/speech[@politician=//politician[@party="PSD"]/@code][1]/following-sibling::*/@politician]/@age))
