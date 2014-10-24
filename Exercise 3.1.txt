@@ -1,4 +1,3 @@
 declare default element namespace "http://www.parlamento.pt";
-doc("/Users/jessicaribeiro/Desktop/IST/1semestre/GTI/Projecto/gti-project1/parliament-data-small.xml")
-
+doc("https://fenix.tecnico.ulisboa.pt/downloadFile/566729524645336/parliamentUdata.xml")
 /count(distinct-values(//parliament-interventions/session[@date = "2014-03-01" or @date = "2014-03-02"]/speech/@politician))
