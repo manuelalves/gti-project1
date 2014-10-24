@@ -1,6 +1,6 @@
 declare namespace p = "http://www.parlamento.pt";
 
-<interventions>{let $doc := doc("file:///C:\Users\Ricardo Leit„o\Documents\gti-project1/parliament-data.xml")
+<interventions>{let $doc := doc("file:///C:\Users\Ricardo Leit√£o\Documents\gti-project1/parliament-data.xml")
 for $i in (1 to 5)
 let $intervention := (for $speech in $doc//p:speech
 for $interventions in $speech[attribute::politician]
