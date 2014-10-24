@@ -1,5 +1,5 @@
 declare default element namespace "http://www.parlamento.pt";
-let $doc := doc("/Users/jessicaribeiro/Desktop/IST/1semestre/GTI/Projecto/gti-project1/parliament-data-small.xml")
+let $doc := doc("https://fenix.tecnico.ulisboa.pt/downloadFile/566729524645336/parliamentUdata.xml")
 
 let $sessions := (
  for $session in $doc//session
