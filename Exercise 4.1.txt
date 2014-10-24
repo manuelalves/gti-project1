@@ -1,6 +1,6 @@
 declare namespace p = "http://www.parlamento.pt";
 
-let $doc := doc("file:///afs/ist.utl.pt/users/3/2/ist169632/gti-project1/parliament-data.xml")
+let $doc := doc(https://fenix.tecnico.ulisboa.pt/downloadFile/566729524645336/parliamentUdata.xml)
 
 let $rep := (
 for $speech in $doc//p:speech
