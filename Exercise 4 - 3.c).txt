@@ -7,7 +7,7 @@ for $session in ($doc//session)
 let $p := (  
 for $pol in ($politician)
 let $count := count($session/speech[@politician eq $pol/@code])
-return <p order= "\{$pol/@code\}"  num= "\{$count\}" >  </p>
+return <p order= "{$pol/@code}"  num= "{$count}" >  </p>
 )
 
 let $max := max(
@@ -22,9 +22,10 @@ let $party := $politician[@code  = $politic/@order]/@party
 return 
   copy $s := $session
   modify (
-   insert node ( attribute most-frequent \{$party\})
+   insert node ( attribute most-frequent {$party})
    into $s )
-  return <session> <date> \{$s/@date\} </date> <most-frequent> \{$s/@most-frequent\} </most-frequent> </session>
+  return <session> <date> {$s/@date} </date> <most-frequent> {$s/@most-frequent} </most-frequent> </session>
+
 
 
 
