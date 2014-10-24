@@ -1,6 +1,4 @@
 declare default element namespace "http://www.parlamento.pt";
 doc("https://fenix.tecnico.ulisboa.pt/downloadFile/566729524645336/parliamentUdata.xml")
 
-//politician[@code = 
-//parliament-interventions/session/speech[text()[contains(., "ensino superior")] or text()[contains(., "educa\'e7\'e3o")]]/@politician
-]/text()
+//politician[@code = //parliament-interventions/session/speech[text()[contains(., "ensino superior")] or text()[contains(., "educação")]]/@politician]/text()
