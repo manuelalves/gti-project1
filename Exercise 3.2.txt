@@ -1,3 +1,6 @@
+declare default element namespace "http://www.parlamento.pt";
+doc("/Users/jessicaribeiro/Desktop/IST/1semestre/GTI/Projecto/gti-project1/parliament-data-small.xml")
+
 //politician[@code = 
 //parliament-interventions/session/speech[text()[contains(., "ensino superior")] or text()[contains(., "educa\'e7\'e3o")]]/@politician
-]/text()}
+]/text()

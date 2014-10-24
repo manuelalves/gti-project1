@@ -1,5 +1,5 @@
-declare default element namespace "http://www.parlamento.pt";\
-let $doc := doc("/Users/jessicaribeiro/Desktop/IST/1semestre/GTI/Projecto/gti-project1/parliament-data.xml")
+declare default element namespace "http://www.parlamento.pt";
+let $doc := doc("/Users/jessicaribeiro/Desktop/IST/1semestre/GTI/Projecto/gti-project1/parliament-data-small.xml")
 
 let $interv := (
  for $session in $doc//session
@@ -14,8 +14,7 @@ let $count := count(index-of($interv, $code))
 return    
 copy $politicians := $politician
  	 modify (
-  	 insert node ( attribute num-sessions \{$count\})
+  	 insert node ( attribute num-sessions {$count})
   	 into $politicians )
-	 return  <politician><name>\{$name\}</name><num-sessions>\{$count\}</num-sessions></politician>
+	 return  <politician><name>{$name}</name><num-sessions>{$count}</num-sessions></politician>
 
-}
