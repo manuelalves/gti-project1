@@ -1,6 +1,6 @@
 declare namespace p = "http://www.parlamento.pt";
 
-<interventions>{let $doc := doc(https://fenix.tecnico.ulisboa.pt/downloadFile/566729524645336/parliamentUdata.xml)
+<interventions>{let $doc := doc("https://fenix.tecnico.ulisboa.pt/downloadFile/566729524645336/parliamentUdata.xml")
 for $i in (1 to 5)
 let $intervention := (for $speech in $doc//p:speech
 for $interventions in $speech[attribute::politician]
