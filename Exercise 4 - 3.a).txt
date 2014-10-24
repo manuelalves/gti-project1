@@ -1,5 +1,3 @@
-
-
 declare default element namespace "http://www.parlamento.pt";
 let $doc := doc("/Users/jessicaribeiro/Desktop/IST/1semestre/GTI/Projecto/gti-project1/parliament-data-small.xml")
 
@@ -9,6 +7,7 @@ order by $count descending
 return 
   copy $p := $politician
   modify (
-   insert node ( attribute num-interventions \{$count\})
+   insert node ( attribute num-interventions {$count})
    into $p )
-  return  <politician> <name> \{$p/text()\} </name> <interventions> \{$p/@num-interventions\} </interventions> </politician>}
+  return  <politician> <name> {$p/text()} </name> <interventions> {$p/@num-interventions} </interventions> </politician>
+
