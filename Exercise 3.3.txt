@@ -1,0 +1,4 @@
+declare default element namespace "http://www.parlamento.pt";
+doc("https://fenix.tecnico.ulisboa.pt/downloadFile/1411154454773835/parliament-data-small.xml")
+
+//politician[@code = //speech[@politician=//politician[text()[starts-with(.,"Jos") and ends-with(.,"Seguro")]]/@code]/following::speech[1][@politician !=//politician[text()[starts-with(.,"Jos") and ends-with(.,"Seguro")]]/@code ]/@politician]/text()
